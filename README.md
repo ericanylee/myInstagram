@@ -16,7 +16,7 @@ The following **required** functionality is completed:
 
 The following **optional** features are implemented:
 
-- [x] Show the username and creation time for each post
+- [ ] Show the username and creation time for each post
 - [ ] After the user submits a new post, show a progress HUD while the post is being uploaded to Parse.
 - [ ] User Profiles:
    - [ ] Allow the logged in user to add a profile photo
@@ -30,8 +30,8 @@ The following **additional** features are implemented:
 
 Please list two areas of the assignment you'd like to **discuss further with your peers** during the next class (examples include better ways to implement something, how to extend your app in certain ways, etc):
 
-1. 
-2. 
+1. How can I emplement adding friends and viewing others posts?
+
 
 ## Video Walkthrough 
 
@@ -42,8 +42,8 @@ Here's a walkthrough of implemented user stories:
 GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
 ## Notes
-
-Describe any challenges encountered while building the app.
+Some navigation among the view controllers got confusing (after uploading photo, dismissing the view controller, or after signing out, going back to the log in screen..etc)
+I tried to retrieve created_at timestamps and username, but everything would be returned as nil.. Want to debug it
 
 ## License
 
