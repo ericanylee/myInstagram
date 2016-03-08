@@ -18,28 +18,22 @@ class userViewController: UIViewController, UITableViewDelegate, UITableViewData
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
-        print("in Login View Controller")
-        requestPosts(nil)
         
+        //add Refresh Control
         let refreshControl = UIRefreshControl()
         refreshControl.addTarget(self, action: "refreshControlAction:", forControlEvents: UIControlEvents.ValueChanged)
+        tableView.insertSubview(refreshControl, atIndex: 0)
+
+        print("in Login View Controller")
+        requestPosts(nil)
 
         // Do any additional setup after loading the view.
     }
-
-   /* func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath){
-        //let tweet = tweets![indexPath.row]
-        performSegueWithIdentifier("detailViewController", sender: tweet)
-        
-    }
-    */
-    
 
     @IBAction func onLogout(sender: AnyObject) {
         PFUser.logOut()
         self.dismissViewControllerAnimated(true, completion: nil)
     }
-    
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell{
             let cell = tableView.dequeueReusableCellWithIdentifier("photoCell", forIndexPath: indexPath) as! photoCell
@@ -51,6 +45,18 @@ class userViewController: UIViewController, UITableViewDelegate, UITableViewData
                 file?.getDataInBackgroundWithBlock({ (data, error) -> Void in
                     cell.photo.image = UIImage(data: data!)
                     cell.captionLabel.text = post["caption"] as? String
+                    let username =  post["_id"] as? String
+                    let time = post["_created_at"] as? String
+                    if let timestampString = time{
+                        let formatter = NSDateFormatter()
+                        formatter.dateFormat = "EEE MMM d HH:mm:ss Z y"
+                         let timestamp = formatter.dateFromString(timestampString)! as NSDate
+                        cell.timestamp.text = String(timestamp)
+                    }
+                    else {
+                        cell.timestamp.text = "N/A"
+                    }
+                    cell.userName.text = username
                 })
             }
             else{
@@ -100,10 +106,6 @@ class userViewController: UIViewController, UITableViewDelegate, UITableViewData
         requestPosts{ () -> Void in
             refreshControl.endRefreshing()
         }
-        // ... Create the NSURLRequest (myRequest) ...
-        
-        // Configure session so that completion handler is executed on main UI thread
-        
     }
 
     /*

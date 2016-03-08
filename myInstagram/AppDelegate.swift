@@ -24,7 +24,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 print("initialized with configuration")
             })
         )
-        /*
+        
         // check if user is logged in.
         if PFUser.currentUser() != nil {
             print("user is loged in")
@@ -33,7 +33,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             
             self.window?.rootViewController = vc
         }
-        */
+        
         return true
     }
 

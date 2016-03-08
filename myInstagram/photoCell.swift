@@ -12,6 +12,8 @@ class photoCell: UITableViewCell {
 
     @IBOutlet weak var photo: UIImageView!
     @IBOutlet weak var captionLabel: UILabel!
+    @IBOutlet weak var userName: UILabel!
+    @IBOutlet weak var timestamp: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
