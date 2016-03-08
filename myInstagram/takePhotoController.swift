@@ -29,7 +29,7 @@ class takePhotoController: UIViewController, UIImagePickerControllerDelegate, UI
         let alertController = UIAlertController(title: "Choose", message: nil, preferredStyle: .ActionSheet)
 
         //two options, one is to take a picture
-        let takePic = UIAlertAction(title: "Take a picture", style: .Default) { (action) -> Void in
+        let takePic = UIAlertAction(title: "Take a Photo", style: .Default) { (action) -> Void in
             //from CodePath
             let vc = UIImagePickerController()
             vc.delegate = self
@@ -92,12 +92,20 @@ class takePhotoController: UIViewController, UIImagePickerControllerDelegate, UI
     @IBAction func UploadTapped(sender: AnyObject) {
         if uploadButton.backgroundImageForState(.Normal) != nil {
             Post.postUserImage(uploadButton.backgroundImageForState(.Normal), withCaption: caption.text, withCompletion: { (success, error) -> Void in
-                NSNotificationCenter.defaultCenter().postNotificationName("photoPosted", object: nil)
                 self.dismissViewControllerAnimated(true, completion: nil)
         })
         }
+        else{
+            let alertController = UIAlertController(title: "Error", message:
+                "You haven't uploaded any photos!", preferredStyle: UIAlertControllerStyle.Alert)
+            alertController.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default,handler: nil))
+            
+            self.presentViewController(alertController, animated: true, completion: nil)
+
+        }
     }
 
+    
     
     @IBAction func cancelTapped(sender: AnyObject) {
         self.dismissViewControllerAnimated(true, completion: nil)

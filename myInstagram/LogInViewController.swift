@@ -27,12 +27,14 @@ class LogInViewController: UIViewController {
     @IBAction func signIn(sender: AnyObject) {
         PFUser.logInWithUsernameInBackground(usernameField.text!, password: passwordField.text!) { (user: PFUser?, error: NSError?) -> Void in
             if user != nil{
-                print("you're logged in!")
-                self.performSegueWithIdentifier("loginSegue", sender: nil)
+                    print("you're logged in!")
+                    self.performSegueWithIdentifier("loginSegue", sender: nil)
+            } else {
+                    print(error?.localizedDescription)
+                
             }
-            
+
         }
-        
     }
 
     @IBAction func signUp(sender: AnyObject) {

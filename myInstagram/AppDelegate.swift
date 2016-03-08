@@ -21,15 +21,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 configuration.applicationId = "instagram_id"
                 configuration.clientKey = "01291994"
                 configuration.server = "https://ericasinstagram.herokuapp.com/parse"
+                print("initialized with configuration")
             })
         )
-        
+        /*
         // check if user is logged in.
         if PFUser.currentUser() != nil {
-            let viewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("userViewController")
-            window?.rootViewController = viewController
+            print("user is loged in")
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let vc = storyboard.instantiateViewControllerWithIdentifier("userViewController")
+            
+            self.window?.rootViewController = vc
         }
-        
+        */
         return true
     }
 
