@@ -8,14 +8,40 @@
 
 import UIKit
 
-class userViewController: UIViewController {
+class userViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
+    var photos: [Post]?
+    
+    @IBOutlet weak var tableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        tableView.delegate = self
+        tableView.dataSource = self
         // Do any additional setup after loading the view.
     }
 
+   /* func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath){
+        //let tweet = tweets![indexPath.row]
+        performSegueWithIdentifier("detailViewController", sender: tweet)
+        
+    }
+    */
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell{
+            let cell = tableView.dequeueReusableCellWithIdentifier("photoCell", forIndexPath: indexPath) as! photoCell
+
+        return cell
+    }
+    
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
+        if photos != nil{
+            return photos!.count
+        }
+        else {
+            return 0
+        }
+    }
+    
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

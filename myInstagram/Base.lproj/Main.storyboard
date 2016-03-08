@@ -53,17 +53,74 @@
                     <connections>
                         <outlet property="passwordField" destination="mpi-i8-Qqu" id="Mzp-HK-ODH"/>
                         <outlet property="usernameField" destination="N0U-vp-0SZ" id="H50-bE-Lro"/>
-                        <segue destination="2rd-LY-75q" kind="presentation" identifier="loginSegue" id="1Vm-ks-E7b"/>
+                        <segue destination="Z0N-5z-Ov7" kind="presentation" identifier="loginSegue" id="1Vm-ks-E7b"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="380" y="312"/>
         </scene>
+        <!--Take Photo Controller-->
+        <scene sceneID="lQh-Fx-9t9">
+            <objects>
+                <viewController storyboardIdentifier="takePhotoController" id="TnC-hs-2ll" customClass="takePhotoController" customModule="myInstagram" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Okt-bL-fRI"/>
+                        <viewControllerLayoutGuide type="bottom" id="JhL-UU-LIR"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="zUh-tW-xnq">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="Caption" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fDT-nv-3Bg">
+                                <rect key="frame" x="20" y="394" width="280" height="53"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tbt-pg-YwL">
+                                <rect key="frame" x="67" y="193" width="188" height="30"/>
+                                <animations/>
+                                <state key="normal" title="Click here to Upload Photo!"/>
+                                <connections>
+                                    <action selector="uploadTapped:" destination="TnC-hs-2ll" eventType="touchUpInside" id="pOp-xJ-Gfm"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8dl-F8-npd">
+                                <rect key="frame" x="18" y="487" width="50" height="30"/>
+                                <animations/>
+                                <state key="normal" title="Upload"/>
+                                <connections>
+                                    <action selector="UploadTapped:" destination="TnC-hs-2ll" eventType="touchUpInside" id="7cb-AS-exW"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pcx-MV-9Ha">
+                                <rect key="frame" x="253" y="487" width="48" height="30"/>
+                                <animations/>
+                                <state key="normal" title="Cancel"/>
+                                <connections>
+                                    <action selector="cancelTapped:" destination="TnC-hs-2ll" eventType="touchUpInside" id="G7u-q3-aQz"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="Lda-86-HDB"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="caption" destination="fDT-nv-3Bg" id="gtY-Wh-foA"/>
+                        <outlet property="uploadButton" destination="Tbt-pg-YwL" id="MeC-BF-G4M"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xgO-JB-te7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1847" y="-348"/>
+        </scene>
         <!--User View Controller-->
         <scene sceneID="rN5-rc-dPO">
             <objects>
-                <viewController id="2rd-LY-75q" customClass="userViewController" customModule="myInstagram" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="userViewController" id="2rd-LY-75q" customClass="userViewController" customModule="myInstagram" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Axq-3f-0nr"/>
                         <viewControllerLayoutGuide type="bottom" id="iIW-W6-Cbe"/>
@@ -71,12 +128,128 @@
                     <view key="view" contentMode="scaleToFill" id="rbt-Hx-WMT">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="344" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="1NK-qf-v5B">
+                                <rect key="frame" x="0.0" y="28" width="320" height="540"/>
+                                <animations/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="photoCell" rowHeight="344" id="KcM-jj-BK2" customClass="photoCell" customModule="myInstagram" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="92" width="320" height="344"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KcM-jj-BK2" id="fP6-fV-5na">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="343"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ve7-vA-ln2">
+                                                    <rect key="frame" x="22" y="8" width="270" height="270"/>
+                                                    <animations/>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Caption" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2vV-nw-rag">
+                                                    <rect key="frame" x="22" y="286" width="164" height="21"/>
+                                                    <animations/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <animations/>
+                                        </tableViewCellContentView>
+                                        <animations/>
+                                        <connections>
+                                            <outlet property="captionLabel" destination="2vV-nw-rag" id="MYd-5T-cKj"/>
+                                            <outlet property="photo" destination="Ve7-vA-ln2" id="Jyp-82-4Q9"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="VkK-NS-acG">
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="SNF-Os-QDz">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="JR5-9Z-Spm">
+                                <rect key="frame" x="233" y="5" width="71" height="33"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <state key="normal" title="Upload">
+                                    <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                            </button>
+                            <connections>
+                                <segue destination="TnC-hs-2ll" kind="push" id="7IP-SG-7wZ"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="tableView" destination="1NK-qf-v5B" id="ARY-c1-4Qt"/>
+                        <segue destination="VrJ-4d-8sW" kind="push" identifier="detailViewSegue" id="iuK-pB-PiJ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="p9b-Y0-uSt" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1373" y="312"/>
+        </scene>
+        <!--Photo Detail View Controller-->
+        <scene sceneID="MyV-pm-fD7">
+            <objects>
+                <viewController id="VrJ-4d-8sW" customClass="photoDetailViewController" customModule="myInstagram" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="wZx-Ab-ydD"/>
+                        <viewControllerLayoutGuide type="bottom" id="boI-se-9ga"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="tP4-tg-9Xh">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="bkq-Xb-68G"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4kt-aT-6oB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1837" y="312"/>
+        </scene>
+        <!--Take Photo Controller-->
+        <scene sceneID="qbx-0A-R1J">
+            <objects>
+                <viewController id="QmD-TF-f2n" customClass="takePhotoController" customModule="myInstagram" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="RHP-e1-xC4"/>
+                        <viewControllerLayoutGuide type="bottom" id="raR-ac-sEz"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Xx7-vi-lSL" customClass="takePhoto">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="p9b-Y0-uSt" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ed1-WK-91j" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="380" y="1012"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="mPa-kP-36A">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Z0N-5z-Ov7" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Vuk-Qg-EMP">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <animations/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="2rd-LY-75q" kind="relationship" relationship="rootViewController" id="D2B-aW-bes"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8bp-3U-E3c" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="841" y="312"/>
         </scene>

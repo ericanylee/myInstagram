@@ -14,6 +14,10 @@
 		079971A81C8CDC1F00B843AA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 079971A61C8CDC1F00B843AA /* LaunchScreen.storyboard */; };
 		079971B01C8CE21D00B843AA /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079971AF1C8CE21D00B843AA /* LogInViewController.swift */; };
 		079971B21C8CE7B300B843AA /* userViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079971B11C8CE7B300B843AA /* userViewController.swift */; };
+		07E333E01C8D4EA500D36403 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07E333DF1C8D4EA500D36403 /* Post.swift */; };
+		07E333E21C8D4F5E00D36403 /* takePhotoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07E333E11C8D4F5E00D36403 /* takePhotoController.swift */; };
+		07E333E41C8D4FE000D36403 /* photoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07E333E31C8D4FE000D36403 /* photoCell.swift */; };
+		07E333E61C8D513E00D36403 /* photoDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07E333E51C8D513E00D36403 /* photoDetailViewController.swift */; };
 		D115FF66F4FBF30091974479 /* Pods_myInstagram.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FF307A75F32E282947F2213 /* Pods_myInstagram.framework */; };
 /* End PBXBuildFile section */
 
@@ -27,6 +31,10 @@
 		079971A91C8CDC1F00B843AA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		079971AF1C8CE21D00B843AA /* LogInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
 		079971B11C8CE7B300B843AA /* userViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = userViewController.swift; sourceTree = "<group>"; };
+		07E333DF1C8D4EA500D36403 /* Post.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
+		07E333E11C8D4F5E00D36403 /* takePhotoController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = takePhotoController.swift; sourceTree = "<group>"; };
+		07E333E31C8D4FE000D36403 /* photoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = photoCell.swift; sourceTree = "<group>"; };
+		07E333E51C8D513E00D36403 /* photoDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = photoDetailViewController.swift; sourceTree = "<group>"; };
 		65B5FF2F7C752DE42A9AEF10 /* Pods-myInstagram.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-myInstagram.release.xcconfig"; path = "Pods/Target Support Files/Pods-myInstagram/Pods-myInstagram.release.xcconfig"; sourceTree = "<group>"; };
 		7FF307A75F32E282947F2213 /* Pods_myInstagram.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_myInstagram.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA213F541654BD95B44E2D0C /* Pods-myInstagram.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-myInstagram.debug.xcconfig"; path = "Pods/Target Support Files/Pods-myInstagram/Pods-myInstagram.debug.xcconfig"; sourceTree = "<group>"; };
@@ -73,6 +81,10 @@
 				079971A91C8CDC1F00B843AA /* Info.plist */,
 				079971AF1C8CE21D00B843AA /* LogInViewController.swift */,
 				079971B11C8CE7B300B843AA /* userViewController.swift */,
+				07E333DF1C8D4EA500D36403 /* Post.swift */,
+				07E333E11C8D4F5E00D36403 /* takePhotoController.swift */,
+				07E333E31C8D4FE000D36403 /* photoCell.swift */,
+				07E333E51C8D513E00D36403 /* photoDetailViewController.swift */,
 			);
 			path = myInstagram;
 			sourceTree = "<group>";
@@ -217,9 +229,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				079971A01C8CDC1F00B843AA /* ViewController.swift in Sources */,
+				07E333E41C8D4FE000D36403 /* photoCell.swift in Sources */,
 				079971B21C8CE7B300B843AA /* userViewController.swift in Sources */,
 				0799719E1C8CDC1F00B843AA /* AppDelegate.swift in Sources */,
+				07E333E21C8D4F5E00D36403 /* takePhotoController.swift in Sources */,
 				079971B01C8CE21D00B843AA /* LogInViewController.swift in Sources */,
+				07E333E61C8D513E00D36403 /* photoDetailViewController.swift in Sources */,
+				07E333E01C8D4EA500D36403 /* Post.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
